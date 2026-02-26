@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YourServerName</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: #0f0f14;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background: rgba(15,15,20,0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00ffcc;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #00ffcc;
+}
+
+section {
+  padding: 120px 10% 80px 10%;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  background: linear-gradient(45deg, #00ffcc, #00aaff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.ip-box {
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  background: #1a1a25;
+  padding: 15px 25px;
+  border-radius: 10px;
+  gap: 15px;
+}
+
+.ip-box button {
+  background: #00ffcc;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.ip-box button:hover {
+  background: #00aaff;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #1a1a25;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.supporters img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">YourServer</div>
+  <ul>
+    <li><a href="#staff">Staff</a></li>
+    <li><a href="#supporters">Supporters</a></li>
+    <li><a href="#discord">Discord</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Welcome to YourServer</h1>
+  <p>The next level Minecraft experience.</p>
+
+  <div class="ip-box">
+    <span id="serverIP">play.yourserver.com</span>
+    <button onclick="copyIP()">Copy IP</button>
+  </div>
+</section>
+
+<section id="staff">
+  <h2>Staff Team</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://mc-heads.net/avatar/Notch" alt="">
+      <h3>Owner</h3>
+      <p>Server Visionary</p>
+    </div>
+    <div class="card">
+      <img src="https://mc-heads.net/avatar/Jeb_" alt="">
+      <h3>Admin</h3>
+      <p>Technical Wizard</p>
+    </div>
+    <div class="card">
+      <img src="https://mc-heads.net/avatar/Dinnerbone" alt="">
+      <h3>Moderator</h3>
+      <p>Community Guardian</p>
+    </div>
+  </div>
+</section>
+
+<section id="supporters">
+  <h2>Supporters</h2>
+  <div class="cards supporters">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="">
+      <h3>TopDonor1</h3>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x150" alt="">
+      <h3>TopDonor2</h3>
+    </div>
+  </div>
+</section>
+
+<section id="discord">
+  <h2>Join Our Discord</h2>
+  <div style="margin-top:30px;">
+    <!-- Replace with your Discord Server ID -->
+    <iframe src="https://discord.com/widget?id=YOUR_SERVER_ID&theme=dark"
+            width="100%" height="400"
+            allowtransparency="true"
+            frameborder="0">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  © 2026 YourServer — Not affiliated with Mojang.
+</footer>
+
+<script>
+function copyIP() {
+  const ip = document.getElementById("serverIP").innerText;
+  navigator.clipboard.writeText(ip);
+  alert("Server IP copied!");
+}
+</script>
+
+</body>
+</html>
